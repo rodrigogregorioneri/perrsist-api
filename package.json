@@ -1,0 +1,35 @@
+{
+  "name": "serverless-integration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/entrypoint/handler.js",
+  "type": "module",
+  "scripts": {
+    "test:single":"mocha -- ",
+    "test:ci" : "jest --collectCoverage",
+    "test:path":"nyc --reporter=lcov --reporter=text-lcov mocha --timeout=1000 --recursive ",
+    "test": "jest",
+    "lint": "eslint --fix .eslintrc.js src/**/*.js",
+    "dev": "nodemon src/eentrypoint/handler.js --ignore __tests__"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.179.0",
+    "@aws-sdk/lib-dynamodb": "^3.179.0",
+    "log4js": "6.6.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.1.0",
+    "aws-sdk": "2.573.0",
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^24.9.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^29.0.3",
+    "@types/jest": "^29.0.3",
+    "chai": "^4.3.6",
+    "eslint": "^8.7.0",
+    "eslint-plugin-jest":"^25.7.0",
+    "nyc":"^15.1.0",
+    "sinon":"^12.0.1"
+  }
+}
